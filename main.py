@@ -1,4 +1,3 @@
-num1=10
-num2=8
-res=num1-num2
-print(res)
+num1=int(input())
+num2=int(input())
+print(num1-num2)
