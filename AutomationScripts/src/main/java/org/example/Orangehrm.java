@@ -12,13 +12,13 @@ public class Main {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
         // Login the webpage using correct credentials
-        WebElement userName = driver.findElement(By.xpath("//*[@name='username']"));
+        WebElement userName = driver.findElement(By.xpath("/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input"));
         userName.sendKeys("Admin");
 
-        WebElement password = driver.findElement(By.xpath("//*[@name='password']"));
+        WebElement password = driver.findElement(By.xpath("/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input"));
         password.sendKeys("admin123");
 
-        WebElement login_button = driver.findElement(By.xpath("//*[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']"));
+        WebElement login_button = driver.findElement(By.xpath("/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
         login_button.click();
 
 driver.quit();
