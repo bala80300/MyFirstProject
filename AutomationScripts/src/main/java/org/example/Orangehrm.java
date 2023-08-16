@@ -7,12 +7,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
+import static jdk.nashorn.internal.objects.NativeJSON.str;
+
 public class Orangehrm {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2)); // webpage takes time to load, so added an implicit wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // webpage takes time to load, so added an implicit wait
 
         // Login the webpage using correct credentials
         WebElement userName = driver.findElement(By.xpath("//*[@name='username']"));
@@ -27,7 +29,18 @@ public class Orangehrm {
         login_button.click();
         Thread.sleep(5000);
 
+        /* Admin Module */
+        driver.findElement(By.xpath("//*[@id='app']/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a")).click();
+        driver.findElement(By.xpath("//*[@class='oxd-input oxd-input--active']")).sendKeys("John Smith");
+        driver.findElement(By.xpath("//*[@type='submit']")).click();
+        WebElement search_result = driver.findElement(By.xpath("//*[@id='app']/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]"));
+        if(search_result == "John Smith") {
+            System.out.println("User is present");
+        }
+        else {
+            System.out.println("User is not present");
+        }
 
-    driver.quit();
+driver.quit();
     }
 }
