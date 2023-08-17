@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-import static jdk.nashorn.internal.objects.NativeJSON.str;
 
 public class Orangehrm {
     public static void main(String[] args) throws InterruptedException {
@@ -30,16 +29,20 @@ public class Orangehrm {
         Thread.sleep(5000);
 
         /* Admin Module */
+
+        //searching the user
         driver.findElement(By.xpath("//*[@id='app']/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a")).click();
-        driver.findElement(By.xpath("//*[@class='oxd-input oxd-input--active']")).sendKeys("John Smith");
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input")).sendKeys("John.Smith");
         driver.findElement(By.xpath("//*[@type='submit']")).click();
-        WebElement search_result = driver.findElement(By.xpath("//*[@id='app']/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]"));
-        if(search_result == "John Smith") {
+        String search_result = driver.findElement(By.xpath("//*[@id='app']/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div/div/div[2]/div")).getText();
+        if(search_result.equals("John.Smith")) {
             System.out.println("User is present");
         }
         else {
             System.out.println("User is not present");
         }
+        
+
 
 driver.quit();
     }
