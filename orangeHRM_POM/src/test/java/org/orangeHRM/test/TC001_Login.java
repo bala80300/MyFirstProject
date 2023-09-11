@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class TC001_Login extends OrangeHRMBase {
     @Test
     public void loginTest() {
-        LoginPage lp = new LoginPage();
+        LoginPage lp = new LoginPage(driver);
         boolean usernameLabel = lp.getUserNameLabel();
         Assert.assertTrue(usernameLabel);
         boolean passwordLabel = lp.getPasswordLabel();
