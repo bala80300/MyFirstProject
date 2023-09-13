@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class OrangeHRMBase {
     String URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-    public WebDriver driver = null;
+    public static WebDriver driver = null;
 
     @BeforeMethod
     public void StartApp() {
@@ -23,6 +23,4 @@ public class OrangeHRMBase {
     public void TearDown() {
         driver.quit();
     }
-
-
 }
