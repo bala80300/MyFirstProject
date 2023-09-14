@@ -9,9 +9,8 @@ import org.testng.annotations.Test;
 public class TC002_Dashboard extends OrangeHRMBase {
     LoginPage loginpage = new LoginPage();
     @Test
-    public void DashboardTest() throws InterruptedException {
+    public void DashboardTest() {
         loginpage.login("Admin", "admin123");
-        Thread.sleep(5000);
         DashboardPage dp = new DashboardPage();
         String headerName = dp.getHeader();
         Assert.assertEquals(headerName, "Dashboard");
