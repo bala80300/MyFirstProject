@@ -10,8 +10,8 @@ import java.time.Duration;
 public class OrangeHRMBase {
     String URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
     public static WebDriver driver = null;
-    public String userName = "Admin";
-    public String passWord = "admin123";
+    public String username = "Admin";
+    public String password = "admin123";
 
     @BeforeMethod
     public void StartApp() {
