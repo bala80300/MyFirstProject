@@ -15,8 +15,8 @@ public class TC001_Login extends OrangeHRMBase {
         Assert.assertTrue(passwordLabel);
 
 
-        lp.enterUserName("Admin");
-        lp.enterPassword("admin123");
+        lp.enterUserName(userName);
+        lp.enterPassword(passWord);
         lp.clickLogin();
 
 
