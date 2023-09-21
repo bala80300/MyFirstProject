@@ -45,9 +45,9 @@ public class LoginPage extends OrangeHRMBase {
         return new DashboardPage();
     }
 
-    public ForgotYourPassword forgotPassword() {
+    public ResetPasswordPage forgotPassword() {
         driver.findElement(By.xpath("//p[text()='Forgot your password? ']")).click();
-        return new ForgotYourPassword();
+        return new ResetPasswordPage();
     }
 
     /**
