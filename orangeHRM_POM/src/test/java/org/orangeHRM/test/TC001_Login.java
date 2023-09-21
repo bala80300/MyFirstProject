@@ -9,6 +9,7 @@ public class TC001_Login extends OrangeHRMBase {
     @Test
     public void loginTest() {
         LoginPage lp = new LoginPage();
+
         boolean usernameLabel = lp.getUserNameLabel();
         Assert.assertTrue(usernameLabel);
         boolean passwordLabel = lp.getPasswordLabel();

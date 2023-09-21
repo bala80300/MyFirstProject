@@ -45,6 +45,11 @@ public class LoginPage extends OrangeHRMBase {
         return new DashboardPage();
     }
 
+    public ForgotYourPassword forgotPassword() {
+        driver.findElement(By.xpath("//p[text()='Forgot your password? ']")).click();
+        return new ForgotYourPassword();
+    }
+
     /**
      * @description - This function is used for login
      * @param username
