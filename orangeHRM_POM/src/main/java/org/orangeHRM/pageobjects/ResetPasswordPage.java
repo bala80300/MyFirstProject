@@ -5,7 +5,7 @@ import org.orangeHRM.seleniumbase.OrangeHRMBase;
 
 public class ResetPasswordPage extends OrangeHRMBase {
     public String getResetPasswordHeader() {
-        return driver.findElement(By.xpath("//form/h6")).getText();
+        return driver.findElement(By.xpath("//h6[text()='Reset Password']")).getText();
     }
 
     public String getUsernameLabel() {
