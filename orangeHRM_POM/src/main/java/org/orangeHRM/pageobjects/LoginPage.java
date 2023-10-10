@@ -10,6 +10,10 @@ public class LoginPage extends OrangeHRMBase {
 //        this.driver = driver;
 //    }
 
+    public boolean loginLabel() {
+        return driver.findElement(By.xpath("//div/h5")).isDisplayed();
+    }
+
     public boolean getUserNameLabel() {
         return driver.findElement(By.xpath("//label[text()='Username']")).isDisplayed();
     }
