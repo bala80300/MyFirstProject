@@ -15,8 +15,8 @@ public class TC004_Logout extends OrangeHRMBase {
     @Test
     public void LogoutTest() {
         // created object for TC002_Dashboard class to Login the page & checking Dashboard is visible
-        TC002_Dashboard DashboardClassObject = new TC002_Dashboard();
-        DashboardClassObject.DashboardTest();
+        TC002_Dashboard DashboardTestObject = new TC002_Dashboard();
+        DashboardTestObject.DashboardTest();
 
         //clicking on Profile dropdown in dashboard page
         dp.profile();
